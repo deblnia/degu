@@ -19,6 +19,7 @@ class URL:
             proto=socket.IPPROTO_TCP,
         )
         s.connect((self.host, 80))
+        print(s)
         # make request
         request = f"GET {self.path} HTTP/1.0\r\n"
         request += f"Host: {self.host}\r\n"
@@ -33,5 +34,5 @@ class URL:
 url = URL("http://google.com/index.html")
 print(f"scheme: {url.scheme}")
 print(f"host: {url.host} \npath: {url.path}")
-
+print(url.request())
 url.request()
